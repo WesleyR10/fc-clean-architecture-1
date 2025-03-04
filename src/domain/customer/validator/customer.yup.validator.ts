@@ -23,9 +23,9 @@ export default class CustomerYupValidator
           }
         );
     } catch (errors) {
-      const e = errors as yup.ValidationError;
+      const e = errors as yup.ValidationError; // Pegando todos os erros 
       e.errors.forEach((error) => {
-        entity.notification.addError({
+        entity.notification.addError({ // Adicionando todos os erros no notification
           context: "customer",
           message: error,
         });
